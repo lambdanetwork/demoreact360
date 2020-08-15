@@ -1,0 +1,33 @@
+
+project:
+  name: demoreact360
+  team: games
+  type: fe
+  repo_path: https://git.garena.com/shopee/shopee-id/fe-shared/react360
+  
+domain:
+  path: /demoreact360
+  rewrite: # input domain path rewrite inside your application ex: /public
+  prefix: play
+
+dependencies:
+  micro_fe: false
+  pubsub: false
+  gcs: false
+
+### EXAMPLE ###
+# project:
+#   name: guexx-be
+#   team: games
+#   type: be
+#   repo_path: git.xxx.com/sss/sss-id/guexx/guexx-be
+#
+# domain:
+#   path: /api/guexx-be
+#   rewrite: /public
+#   prefix: play
+#
+# dependencies:
+#   micro_fe: false
+#   pubsub: false
+#   gcs: false

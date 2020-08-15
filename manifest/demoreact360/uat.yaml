@@ -1,0 +1,54 @@
+# application name
+appName: demoreact360
+
+# pods replica
+replicaCount: 1
+
+# image can be overwritten by deploy.sh
+image:
+  repository: asia.gcr.io/spid-non-prod/demoreact360
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# service can be overwritten by deploy.sh
+service:
+  type: ClusterIP
+  port: 80
+
+# networking configuration virtual service or ingress resource
+virtualService:
+  enabled: true
+  path: /demoreact360
+  rewrite: /
+  hosts:
+    - domain: play.uat.shopee.co.id
+      enabled: true
+    - domain: play.uat.shopee.co.th
+      enabled: true
+    - domain: play.uat.shopee.com.my
+      enabled: true
+    - domain: play.uat.shopee.sg
+      enabled: true
+    - domain: play.uat.shopee.vn
+      enabled: true
+    - domain: play.uat.shopee.tw
+      enabled: true
+    - domain: play.uat.shopee.ph
+      enabled: true
+
+ingress:
+  enabled: false
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    cpu: 50m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
